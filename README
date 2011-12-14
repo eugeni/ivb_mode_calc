@@ -1,0 +1,37 @@
+This tool allows to list possible combinations of outputs to be used for pipeB
+and pipeC.
+
+Example:
+
+# xrandr
+Screen 0: minimum 320 x 200, current 1600 x 900, maximum 8192 x 8192
+LVDS1 connected 1600x900+0+0 (normal left inverted right x axis y axis) 309mm x 174mm
+   1600x900       60.0*+   40.0  
+   1024x768       60.0  
+   800x600        60.3     56.2  
+   640x480        59.9  
+VGA1 disconnected (normal left inverted right x axis y axis)
+HDMI1 connected (normal left inverted right x axis y axis) 0mm x 0mm
+   1600x900       60.0*+   40.0  
+   1024x768       60.0  
+   800x600        60.3     56.2  
+   640x480        59.9  
+DP1 connected (normal left inverted right x axis y axis) 0mm x 0mm
+   1600x900       60.0*+   40.0  
+   800x600        60.3     56.2  
+HDMI2 disconnected (normal left inverted right x axis y axis)
+HDMI3 disconnected (normal left inverted right x axis y axis)
+DP2 disconnected (normal left inverted right x axis y axis)
+DP3 disconnected (normal left inverted right x axis y axis)
+
+# ./xrandr.py
+Valid modes for 3 display outputs:
+--output DP1 --mode 1600x900 --rate 60.0 --output HDMI1 --mode 1600x900 --rate 60.0
+--output DP1 --mode 1600x900 --rate 40.0 --output HDMI1 --mode 1600x900 --rate 40.0
+--output DP1 --mode 800x600 --rate 60.3 --output HDMI1 --mode 800x600 --rate 60.3
+--output DP1 --mode 800x600 --rate 56.2 --output HDMI1 --mode 800x600 --rate 56.2
+--output HDMI1 --mode 1600x900 --rate 60.0 --output DP1 --mode 1600x900 --rate 60.0
+--output HDMI1 --mode 1600x900 --rate 40.0 --output DP1 --mode 1600x900 --rate 40.0
+--output HDMI1 --mode 800x600 --rate 60.3 --output DP1 --mode 800x600 --rate 60.3
+--output HDMI1 --mode 800x600 --rate 56.2 --output DP1 --mode 800x600 --rate 56.2
+
