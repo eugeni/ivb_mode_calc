@@ -1,5 +1,20 @@
+On Ivy Bridge platform, when 3 display outputs are used, they can be used as
+long as both displays connected to the second and third output share the same
+resolution and refresh rate.
+
 This tool allows to list possible combinations of outputs to be used for pipeB
 and pipeC.
+
+So the following scenarios would work:
+- Just one output:
+  - use xrandr as usual. Any resolution on any output should work.
+- Two outputs
+  - use xrandr as usual. Any resolution on any 2 outputs should work.
+- Three outputs
+  - for the first output (VGA, LVDS or eDP), use xrandr as usual. Any
+    resolution should work.
+  - for the 2nd and 3rd outputs, use one of the valid outputs which this tool
+    can print out for you.
 
 Example:
 
@@ -34,4 +49,5 @@ Valid modes for 3 display outputs:
 --output HDMI1 --mode 1600x900 --rate 40.0 --output DP1 --mode 1600x900 --rate 40.0
 --output HDMI1 --mode 800x600 --rate 60.3 --output DP1 --mode 800x600 --rate 60.3
 --output HDMI1 --mode 800x600 --rate 56.2 --output DP1 --mode 800x600 --rate 56.2
+
 
